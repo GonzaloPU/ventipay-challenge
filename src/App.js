@@ -18,12 +18,16 @@ function App() {
     url: 'http://127.0.0.1/payment_methods',
   });
 
+  const payments = [];
+  const go = () =>{};
+
   const [paymentMethodsCount, setPaymentMethodsCount] = useState();
   const [isLoading, setIsLoading] = useState();
 
   useEffect(() => {
     setPaymentMethodsCount(0);
   });
+  const paymentMethodsCountendingineven = () =>{};
 
   return (
     <div className="App">
@@ -37,9 +41,9 @@ function App() {
       }
       <ul>
         {
-          paymentMethods.map(o => {
+         payments.map( go => {
             return (
-              <li>Brand: {o.brand}, Last 4: {o.last4}, Created At: {o.created_at}</li>
+              <li>Brand: {go.brand}, Last 4: {go.last4}, Created At: {go.created_at}</li>
             );
           })
         }
