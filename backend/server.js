@@ -10,7 +10,8 @@
  * Use async/await when possible
  * All endpoints must send a valid JSON response
  * The server must be started using a non-privileged port
- * You don't need to use a database to handle data, using an in-memory object is OK just make sure the delete endpoint works and that you provide an initial seed
+ * You don't need to use a database to handle data, using an in-memory object is OK just make sure the delete endpoint works
+ *  and that you provide an initial seed
  * A Payment Method record must use the following schema:
  * {
  *  id: <some random ID>,
@@ -25,13 +26,15 @@
 const express = require('express');
 
 const server = express();
+const PORT = process.env.PORT || 8000;
 
+server.use(express.json());
 server.get('/payment_methods', (req, res) => {
   res.status(404).send({
     status: 200
   });
 });
 
-server.listen({ port: process.env.PORT || 80 }, () => {
-  console.log(`🚀 API Server instance ready`);
+server.listen(PORT , () => {
+  console.log(`🚀 API Server instance ready on port ${PORT}`);
 });
